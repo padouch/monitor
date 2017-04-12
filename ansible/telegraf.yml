@@ -1,0 +1,10 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: "Installing wget on Debian"
+      apt:
+        name: wget
+        state: installed
+      when: ansible_distribution == 'Debian'
+  roles:
+    - role: telegraf

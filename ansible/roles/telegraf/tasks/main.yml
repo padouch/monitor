@@ -1,1 +1,9 @@
-#init
+---
+# tasks file for ansible-telegraf
+
+- name: "Copy telegraf output plugin"
+  template:
+    src: "200-output.conf.js2"
+    dest: "/etc/telegraf/telegraf.d/200-output.conf"
+  become: yes
+  notify: "Restart Telegraf"
