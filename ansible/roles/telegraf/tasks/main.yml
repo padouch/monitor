@@ -3,9 +3,15 @@
 - name: "Install telegraf on server"
   include: installTelegraf.yml
 
+- name: "Prepare telegraf.conf"
+  template:
+    src: "mainConf.conf.j2"
+    desc: "/etc/telegraf/telegraf.conf"
+  become: yes
+  
 - name: "Copy telegraf output plugin"
   template:
-    src: "200-output.conf.js2"
+    src: "200-output.conf.j2"
     dest: "/etc/telegraf/telegraf.d/200-output.conf"
   become: yes
   notify: "Restart Telegraf"
