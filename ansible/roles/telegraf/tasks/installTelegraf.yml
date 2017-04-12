@@ -1,0 +1,13 @@
+---
+#install for ubuntu from repo
+- name: "add key"
+  apt_key:
+    url: https://repos.influxdata.com/influxdb.key
+    state: present
+
+- name: "add repo to list"
+  apt_repository:
+    repo: 'deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable' 
+    state: present 
+    filename: 'influxdb.list' 
+    update_cache: 'yes'

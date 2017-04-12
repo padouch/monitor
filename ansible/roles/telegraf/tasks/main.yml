@@ -1,5 +1,7 @@
 ---
 # tasks file for ansible-telegraf
+- name: "Install telegraf on server"
+  include: installTelegraf.yml
 
 - name: "Copy telegraf output plugin"
   template:
