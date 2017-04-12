@@ -8,7 +8,7 @@
 #todo
 - name: "add repo to list"
   apt_repository:
-    repo: 'deb https://repos.influxdata.com/{{ansible_distribution}} {{ansible_distribution_release}} stable' 
+    repo: 'deb https://repos.influxdata.com/{{ansible_distribution | lower}} {{ansible_distribution_release | lower}} stable' 
     state: present 
     filename: 'influxdb' 
     update_cache: 'yes'
