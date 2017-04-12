@@ -5,6 +5,7 @@
     url: https://repos.influxdata.com/influxdb.key
     state: present
 
+#todo
 - name: "add repo to list"
   apt_repository:
     repo: 'deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable' 
