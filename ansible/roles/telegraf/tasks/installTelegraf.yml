@@ -10,5 +10,5 @@
   apt_repository:
     repo: 'deb https://repos.influxdata.com/{{ansible_distribution}} {{ansible_distribution_release}} stable' 
     state: present 
-    filename: 'influxdb.list' 
+    filename: 'influxdb' 
     update_cache: 'yes'
